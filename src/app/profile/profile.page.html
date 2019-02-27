@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+      <ion-img id="photo" src="/assets/profilePhoto.png"></ion-img>
+      <ion-card-header>
+        <ion-card-title>Cat Cat</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+      <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+            <form [formGroup]="myForm">
+              <ion-item>
+                <ion-label position="floating">About me:</ion-label>
+                <ion-input type="text" formControlName="aboutMe"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Status:</ion-label>                    
+                <ion-input type="text" formControlName="status"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label>Age:</ion-label>
+                  <ion-input type="text" formControlName="age"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label>City:</ion-label>
+                  <ion-input type="text" formControlName="city"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label>Duty:</ion-label>
+                  <ion-input type="text" formControlName="duty"></ion-input>
+              </ion-item>
+            </form>
+      </ion-slide>
+      <!--
+      <ion-slide>
+        <ion-item *ngFor="let p of interests">
+          <ion-label>{{p.field}}: {{p.value}}</ion-label>
+        </ion-item>
+      </ion-slide>
+      <ion-slide>
+        <ion-item *ngFor="let p of position">
+          <ion-label>{{p.field}}: {{p.value}}</ion-label>
+        </ion-item>
+      </ion-slide>
+    -->
+    </ion-slides>
+  <ion-button>Change</ion-button>
+</ion-content>
