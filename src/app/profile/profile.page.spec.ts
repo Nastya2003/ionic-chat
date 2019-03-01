@@ -2,6 +2,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProfilePage } from './profile.page';
+import { ReactiveFormsModule, FormsModule } from '../../../node_modules/@angular/forms';
 
 describe('ProfilePage', () => {
   let component: ProfilePage;
@@ -11,6 +12,7 @@ describe('ProfilePage', () => {
     TestBed.configureTestingModule({
       declarations: [ ProfilePage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [ReactiveFormsModule, FormsModule]
     })
       .compileComponents();
   }));

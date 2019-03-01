@@ -18,41 +18,88 @@
     </ion-card>
       <ion-slides pager="true" [options]="slideOpts">
       <ion-slide>
-            <form [formGroup]="myForm">
-              <ion-item>
-                <ion-label position="floating">About me:</ion-label>
-                <ion-input type="text" formControlName="aboutMe"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-label>Status:</ion-label>                    
-                <ion-input type="text" formControlName="status"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Age:</ion-label>
-                  <ion-input type="text" formControlName="age"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>City:</ion-label>
-                  <ion-input type="text" formControlName="city"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-label>Duty:</ion-label>
-                  <ion-input type="text" formControlName="duty"></ion-input>
-              </ion-item>
-            </form>
-      </ion-slide>
-      <!--
-      <ion-slide>
-        <ion-item *ngFor="let p of interests">
-          <ion-label>{{p.field}}: {{p.value}}</ion-label>
-        </ion-item>
+        <h5>About me</h5>
+          <form [formGroup]="myForm">
+            <ion-item>
+              <ion-label>Status:</ion-label>                    
+              <ion-input type="text" formControlName="status"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Age:</ion-label>
+                <ion-input type="text" formControlName="age"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>City:</ion-label>
+              <ion-input type="text" formControlName="city"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Duty:</ion-label>
+              <ion-input type="text" formControlName="duty"></ion-input>
+            </ion-item>
+          </form>
       </ion-slide>
       <ion-slide>
-        <ion-item *ngFor="let p of position">
-          <ion-label>{{p.field}}: {{p.value}}</ion-label>
-        </ion-item>
+        <h5>My interests</h5>
+        <form [formGroup]="myForm">
+          <ion-item>
+            <ion-label>Music:</ion-label>                    
+            <ion-input type="text" formControlName="music"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Film:</ion-label>                    
+              <ion-input type="text" formControlName="film"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Serial:</ion-label>                    
+              <ion-input type="text" formControlName="serial"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Book:</ion-label>                    
+              <ion-input type="text" formControlName="book"></ion-input>
+          </ion-item>  
+          <ion-item>
+              <ion-label>Game:</ion-label>                    
+              <ion-input type="text" formControlName="game"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Hobby:</ion-label>                    
+              <ion-input type="text" formControlName="hobby"></ion-input>
+            </ion-item>
+          <ion-item>
+            <ion-label>Quote:</ion-label>                    
+            <ion-input type="text" formControlName="quote"></ion-input>
+          </ion-item>            
+        </form>
       </ion-slide>
-    -->
+      <ion-slide>
+        <h5>My life position</h5>
+        <form [formGroup]="myForm">
+          <ion-item>
+            <ion-label>Political views:</ion-label>                    
+            <ion-input type="text" formControlName="politicalViews"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Ideology:</ion-label>                    
+              <ion-input type="text" formControlName="ideology"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Purpose of life:</ion-label>                    
+            <ion-input type="text" formControlName="purposeOfLife"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Main in people:</ion-label>                    
+            <ion-input type="text" formControlName="mainInPeople"></ion-input>
+          </ion-item>  
+          <ion-item>
+            <ion-label>Lifestyle:</ion-label>                    
+            <ion-input type="text" formControlName="lifestyle"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Inspiration:</ion-label>                    
+            <ion-input type="text" formControlName="inspiration"></ion-input>
+          </ion-item>          
+        </form>
+      </ion-slide>      
     </ion-slides>
   <ion-button>Change</ion-button>
 </ion-content>

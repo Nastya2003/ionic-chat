@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, ReactiveFormsModule} from '@angular/forms';
 import { DataService } from '../servises/data.service';
 
 @Component({
@@ -8,94 +8,6 @@ import { DataService } from '../servises/data.service';
   styleUrls: ['profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-  public info = [
-    {
-      field: 'About me',
-      value: ''
-    },
-    {
-      field: 'status',
-      value: 'bunny'
-    },
-    {
-      field: 'age',
-      value: '15'
-    },
-    {
-      field: 'city',
-      value: 'Moscow'
-    },
-    {
-      field: 'duty',
-      value: 'schoolgirl'
-    }
-  ];
-
-  public interests = [
-    {
-      field: 'My interests',
-      value: ''
-    },
-    {
-      field: 'music',
-      value: 'rock'
-    },
-    {
-      field: 'films',
-      value: 'Requiem for a Dream'
-    },
-    {
-      field: 'serials',
-      value: 'none'
-    },
-    {
-      field: 'books',
-      value: 'Pet Sematary'
-    },
-    {
-      field: 'games',
-      value: '2048'
-    },
-    {
-      field: 'quotes',
-      value: 'I`m not a slave to a world that doesn`t give a shit'
-    },
-    {
-      field: 'description',
-      value: 'bunny_girl'
-    }
-  ]
-
-  public position = [
-    {
-      field: 'My life position',
-      value: ''
-    },
-    {
-      field: 'political views',
-      value: '-'
-    },
-    {
-      field: 'ideology',
-      value: 'freethinker'
-    },
-    {
-      field: 'purpose of life',
-      value: 'make people happy'
-    },
-    {
-      field: 'main in people',
-      value: 'openness'
-    },
-    {
-      field: 'lifestyle',
-      value: 'healthy'
-    },
-    {
-      field: 'inspiration',
-      value: 'nature'
-    }
-  ]
 
   slideOpts = {
     effect: 'flip'
@@ -108,12 +20,24 @@ export class ProfilePage implements OnInit {
 
   ngOnInit() {
     this.infoServ.getData().then((data) => {
-       this.myForm = this.fB.group({
-        aboutMe: [data.aboutMe],
+      this.myForm = this.fB.group({
         status: [data.status],
         age: [data.age],
         city: [data.city],
         duty: [data.duty],
+        music: [data.music],
+        film: [data.film],
+        serial: [data.serial],
+        book: [data.book],
+        game: [data.game],
+        hobby: [data.hobby],
+        quote: [data.quote],
+        politicalViews: [data.politicalViews],
+        ideology: [data.ideology],
+        purposeOfLife: [data.purposeOfLife],
+        mainInPeople: [data.mainInPeople],
+        lifestyle: [data.lifestyle],
+        inspiration: [data.inspiration]
       });
     }) 
   }
