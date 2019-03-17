@@ -16,10 +16,10 @@
         <ion-card-title>Cat Cat</ion-card-title>
       </ion-card-header>
     </ion-card>
+    <form [formGroup]="myForm">
       <ion-slides pager="true" [options]="slideOpts">
       <ion-slide>
         <h5>About me</h5>
-          <form [formGroup]="myForm">
             <ion-item>
               <ion-label>Status:</ion-label>                    
               <ion-input type="text" formControlName="status"></ion-input>
@@ -36,11 +36,9 @@
               <ion-label>Duty:</ion-label>
               <ion-input type="text" formControlName="duty"></ion-input>
             </ion-item>
-          </form>
       </ion-slide>
       <ion-slide>
         <h5>My interests</h5>
-        <form [formGroup]="myForm">
           <ion-item>
             <ion-label>Music:</ion-label>                    
             <ion-input type="text" formControlName="music"></ion-input>
@@ -69,11 +67,9 @@
             <ion-label>Quote:</ion-label>                    
             <ion-input type="text" formControlName="quote"></ion-input>
           </ion-item>            
-        </form>
       </ion-slide>
       <ion-slide>
         <h5>My life position</h5>
-        <form [formGroup]="myForm">
           <ion-item>
             <ion-label>Political views:</ion-label>                    
             <ion-input type="text" formControlName="politicalViews"></ion-input>
@@ -98,8 +94,8 @@
             <ion-label>Inspiration:</ion-label>                    
             <ion-input type="text" formControlName="inspiration"></ion-input>
           </ion-item>          
-        </form>
       </ion-slide>      
     </ion-slides>
   <ion-button>Change</ion-button>
+  </form>
 </ion-content>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatsService, ChatsPeople } from '../servises/chats.service'
 
 @Component({
   selector: 'app-chats',
@@ -6,34 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['chats.page.scss']
 })
 export class ChatsPage implements OnInit {
-  private selectedItem: any;
-  private icons = [
-    'flask',
-    'wifi',
-    'beer',
-    'football',
-    'basketball',
-    'paper-plane',
-    'american-football',
-    'boat',
-    'bluetooth',
-    'build'
-  ];
-  public items: Array<{ title: string; note: string; icon: string }> = [];
-  constructor() {
-    for (let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
+  public items : any
+
+  constructor(private chatsServ: ChatsService) {
   }
 
   ngOnInit() {
+    this.chatsServ.getData().then((data) => {
+      this.items = {
+        user1: [data.user1.foto, data.user1.name, data.user1.lastMessage],
+        user2: [data.user2.foto, data.user2.name, data.user2.lastMessage],
+        user3: [data.user3.foto, data.user3.name, data.user3.lastMessage]
+      }
+    })
   }
-  // add back when alpha.4 is out
-  // navigate(item) {
-  //   this.router.navigate(['/chats', JSON.stringify(item)]);
-  // }
 }
+
+

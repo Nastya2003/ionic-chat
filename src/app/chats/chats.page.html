@@ -4,24 +4,19 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      List
+      Chats
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
+  <ion-list *ngFor="let user of items">
+    <ion-item>
+      <ion-icon [name]="user.foto" slot="start"></ion-icon>
+      {{user.name}}
       <div class="item-note" slot="end">
-        {{item.note}}
+        {{user.lastMessage}}
       </div>
     </ion-item>
   </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
 </ion-content>
