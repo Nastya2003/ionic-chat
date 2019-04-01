@@ -10,92 +10,90 @@
 </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card">
-      <ion-img id="photo" src="/assets/profilePhoto.png"></ion-img>
-      <ion-card-header>
-        <ion-card-title>Cat Cat</ion-card-title>
-      </ion-card-header>
+  <ion-card class="welcome-card">
+    <ion-img id="photo" src="/assets/profilePhoto.png"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{name}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <form [formGroup]="myForm">
+    <ion-card class="my-card">
+      <ion-card-title>About me</ion-card-title>
+      <ion-item>
+        <ion-label>Name:</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Age:</ion-label>
+        <ion-input type="text" formControlName="age"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>City:</ion-label>
+        <ion-input type="text" formControlName="city"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Duty:</ion-label>
+        <ion-input type="text" formControlName="duty"></ion-input>
+      </ion-item>
     </ion-card>
-    <form [formGroup]="myForm">
-      <ion-slides pager="true" [options]="slideOpts">
-      <ion-slide>
-        <h5>About me</h5>
-            <ion-item>
-              <ion-label>Status:</ion-label>                    
-              <ion-input type="text" formControlName="status"></ion-input>
-            </ion-item>
-            <ion-item>
-                <ion-label>Age:</ion-label>
-                <ion-input type="text" formControlName="age"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label>City:</ion-label>
-              <ion-input type="text" formControlName="city"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label>Duty:</ion-label>
-              <ion-input type="text" formControlName="duty"></ion-input>
-            </ion-item>
-      </ion-slide>
-      <ion-slide>
-        <h5>My interests</h5>
-          <ion-item>
-            <ion-label>Music:</ion-label>                    
-            <ion-input type="text" formControlName="music"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>Film:</ion-label>                    
-              <ion-input type="text" formControlName="film"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>Serial:</ion-label>                    
-              <ion-input type="text" formControlName="serial"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>Book:</ion-label>                    
-              <ion-input type="text" formControlName="book"></ion-input>
-          </ion-item>  
-          <ion-item>
-              <ion-label>Game:</ion-label>                    
-              <ion-input type="text" formControlName="game"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>Hobby:</ion-label>                    
-              <ion-input type="text" formControlName="hobby"></ion-input>
-            </ion-item>
-          <ion-item>
-            <ion-label>Quote:</ion-label>                    
-            <ion-input type="text" formControlName="quote"></ion-input>
-          </ion-item>            
-      </ion-slide>
-      <ion-slide>
-        <h5>My life position</h5>
-          <ion-item>
-            <ion-label>Political views:</ion-label>                    
-            <ion-input type="text" formControlName="politicalViews"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>Ideology:</ion-label>                    
-              <ion-input type="text" formControlName="ideology"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label>Purpose of life:</ion-label>                    
-            <ion-input type="text" formControlName="purposeOfLife"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label>Main in people:</ion-label>                    
-            <ion-input type="text" formControlName="mainInPeople"></ion-input>
-          </ion-item>  
-          <ion-item>
-            <ion-label>Lifestyle:</ion-label>                    
-            <ion-input type="text" formControlName="lifestyle"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label>Inspiration:</ion-label>                    
-            <ion-input type="text" formControlName="inspiration"></ion-input>
-          </ion-item>          
-      </ion-slide>      
-    </ion-slides>
-  <ion-button>Change</ion-button>
+    <ion-card class="my-card">
+      <ion-card-title>My interests</ion-card-title>
+      <ion-item>
+        <ion-label>Music:</ion-label>
+        <ion-input type="text" formControlName="music"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Film:</ion-label>
+        <ion-input type="text" formControlName="film"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Serial:</ion-label>
+        <ion-input type="text" formControlName="serial"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Book:</ion-label>
+        <ion-input type="text" formControlName="book"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Game:</ion-label>
+        <ion-input type="text" formControlName="game"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Hobby:</ion-label>
+        <ion-input type="text" formControlName="hobby"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Quote:</ion-label>
+        <ion-input type="text" formControlName="quote"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card class="my-card">
+      <ion-card-title>My life position</ion-card-title>
+      <ion-item>
+        <ion-label>Political views:</ion-label>
+        <ion-input type="text" formControlName="politicalViews"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Ideology:</ion-label>
+        <ion-input type="text" formControlName="ideology"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Purpose of life:</ion-label>
+        <ion-input type="text" formControlName="purposeOfLife"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Main in people:</ion-label>
+        <ion-input type="text" formControlName="mainInPeople"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Lifestyle:</ion-label>
+        <ion-input type="text" formControlName="lifestyle"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Inspiration:</ion-label>
+        <ion-input type="text" formControlName="inspiration"></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-button (click)="change()">Change</ion-button>
   </form>
 </ion-content>

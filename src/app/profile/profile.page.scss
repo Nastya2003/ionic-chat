@@ -13,21 +13,14 @@ ion-item {
   min-height: 30px;
 }
 
-ion-slide {
-  min-height: 360px;
-  align-items: baseline;
-  justify-content: flex-start;
-  flex-direction: column;
-}
-
 ion-button {
   margin-left: 1rem;
 }
 
-.swiper-slide {
-  left: 27px;
-}
-
 form {
   width: 80%;
+}
+
+.my-card {
+  padding: 1rem;
 }

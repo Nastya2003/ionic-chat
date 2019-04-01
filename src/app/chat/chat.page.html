@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let m of messages">from: {{m.from}} message: {{m.text}}</ion-card>
+  <!-- <form [formGroup]="myForm">
+  <ion-item>
+      <ion-label>Type message:</ion-label>
+      <ion-input type="text" formControlName="msg"></ion-input>
+  </ion-item> -->
+  <ion-input type="text" [(ngModel)]="msg"></ion-input>
+  <ion-button (click)="send()">send</ion-button>
+
+</ion-content>

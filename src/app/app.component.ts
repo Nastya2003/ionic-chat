@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  uid: string
+
   public appPages = [
     {
       title: 'Profile',
@@ -29,18 +33,15 @@ export class AppComponent {
       title: 'Settings',
       url: '/settings',
       icon: 'settings'
-    },
-    {
-      title: 'Exit',
-      url: '/login',
-      icon: 'log-out'
     }
   ];
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private auth: AngularFireAuth, 
+    private router: Router
   ) {
     this.initializeApp();
   }
@@ -50,5 +51,21 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+
+  ngOnInit() {
+    this.auth.authState.subscribe(user => {
+      this.uid = user && user.uid;
+      if (this.uid) {
+        localStorage.setItem('uid', this.uid);
+      } else {
+        localStorage.removeItem('uid');
+        this.router.navigate(['/login']);
+      }
+    });
+  }
+
+  logOut() {
+    this.auth.auth.signOut();
   }
 }

@@ -5,7 +5,6 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 import { ChatsPage } from './chats.page';
-import { ChatsService } from '../servises/chats.service'
 
 @NgModule({
   imports: [
@@ -21,7 +20,6 @@ import { ChatsService } from '../servises/chats.service'
   ],
   declarations: [ChatsPage],
   providers: [
-    ChatsService
   ]
 })
 export class ChatsPageModule {}

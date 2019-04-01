@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'profile',
+    redirectTo: 'signIn',
     pathMatch: 'full'
   },
   {
@@ -19,13 +19,13 @@ const routes: Routes = [
     path: 'findFriends',
     loadChildren: './chats/chats.module#ChatsPageModule'
   },
-  {
-    path: 'settings',
-    loadChildren: './chats/chats.module#ChatsPageModule'
+  { 
+    path: 'signIn', 
+    loadChildren: './sign-in/sign-in.module#SignInPageModule' 
   },
-  {
-    path: 'login',
-    loadChildren: './chats/chats.module#ChatsPageModule'
+  { 
+    path: 'chat/:id', 
+    loadChildren: './chat/chat.module#ChatPageModule' 
   }
 ];
 

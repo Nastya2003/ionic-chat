@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule }   from '@angular/forms';
 
 import { ProfilePage } from './profile.page';
-import { DataService } from '../servises/data.service';
 
 @NgModule({
   imports: [
@@ -23,7 +22,6 @@ import { DataService } from '../servises/data.service';
   ],
   declarations: [ProfilePage], 
   providers: [
-    DataService
   ]
 })
 export class ProfilePageModule {}
