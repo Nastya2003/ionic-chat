@@ -60,7 +60,7 @@ export class AppComponent implements OnInit {
         localStorage.setItem('uid', this.uid);
       } else {
         localStorage.removeItem('uid');
-        this.router.navigate(['/login']);
+        this.router.navigate(['/signIn']);
       }
     });
   }

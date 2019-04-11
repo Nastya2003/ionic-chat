@@ -4,12 +4,23 @@ ion-card {
     font-size: 17px;
 }
 
-ion-item {
-    width: 60%;
+.messages {
+    position: fixed;
+    top: 0;
+    width: 95%;
+    height: calc(100% - 6rem);
+    overflow: auto;
+}
+
+.sendForm {
+    position: fixed;
+    bottom: 2rem;
+    display: flex;
+    align-items: stretch;
+    width: 95%;
 }
 
 ion-input {
-    background-color: #3880ff;
-    --border-radius: 4px;
-    color: white;
+    flex: 1;
+    border: 1px solid #666;
 }

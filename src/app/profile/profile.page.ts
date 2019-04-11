@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder, ReactiveFormsModule} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { storage } from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/storage';
 
 @Component({
   selector: 'app-profile',
@@ -35,7 +38,9 @@ export class ProfilePage implements OnInit {
     this.myForm = new FormGroup({
       name: new FormControl(data.name),
       age: new FormControl(data.age),
+      gender: new FormControl(data.gender),
       city: new FormControl(data.city),
+      relationshipStatus: new FormControl(data.relationshipStatus),
       duty: new FormControl(data.duty),
       music: new FormControl(data.music),
       film: new FormControl(data.film),
